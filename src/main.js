@@ -31,7 +31,6 @@ function hideLoader() {
   refs.loader.classList.add('hidden');
 }
 
-// Функція плавної прокрутки після додавання нових карток
 function scrollGallery() {
   const galleryCards = refs.gallery.querySelectorAll('.gallery-card');
   if (galleryCards.length === 0) return;
@@ -112,10 +111,8 @@ async function onLoadMore() {
     renderGallery(data.hits);
     lightbox.refresh();
 
-    // Плавне прокручування після додавання нових карток
     scrollGallery();
 
-    // Ховаємо кнопку, якщо більше немає карток
     if (data.hits.length < 15) {
       refs.loadMoreBtn.classList.add('hidden');
       iziToast.info({
